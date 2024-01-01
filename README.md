@@ -1,1 +1,1 @@
-## VArtzy's NeoVim Config 😎
+# VArtzy's NeoVim Config 😎
