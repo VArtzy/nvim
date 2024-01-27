@@ -1,7 +1,8 @@
+local lspconfig = require('lspconfig')
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
-  local opts = {buffer = bufnr, remap = false}
+  local opts = {buffer = bufnr}
 
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -27,6 +28,13 @@ require('mason-lspconfig').setup({
   }
 })
 
+lspconfig.clangd.setup({
+  on_attach = function(client, bufnr)
+    client.server_capabilities.signatureHelpProvider = false
+    on_attach(client, bufnr)
+  end
+})
+
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
@@ -40,9 +48,10 @@ cmp.setup({
   },
   formatting = lsp_zero.cmp_format(),
   mapping = cmp.mapping.preset.insert({
-    ['<Shift-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
     ['<Enter>'] = cmp.mapping.confirm({ select = true }),
     ['<C-Space>'] = cmp.mapping.complete(),
+    ['<Esc>'] = cmp.mapping.close(),
   }),
 })

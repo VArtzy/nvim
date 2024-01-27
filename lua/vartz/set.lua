@@ -1,6 +1,6 @@
+vim.g.mapleader = " "
 vim.g.copilot_assume_mapped = true
-vim.g.mapleader = ""
-vim.o.timeoutlen = 200
+vim.o.timeoutlen = 300
 vim.opt.nu = true
 vim.opt.rnu = true
 
@@ -9,8 +9,6 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
-
-vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -27,4 +25,4 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.api.nvim_set_option('clipboard', 'unnamedplus')
-vim.cmd("autocmd TermOpen * setlocal nonumber norelativenumber")
+vim.cmd("autocmd TermOpen * setlocal nonumber norelativenumber laststatus=0")

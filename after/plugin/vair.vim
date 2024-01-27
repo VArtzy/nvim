@@ -7,6 +7,7 @@
 " Repository: https://github.com/jiangmiao/auto-pairs
 " License: MIT
 
+noremap <leader>gcc :bot split term://cmd /c g++ % -o %< && %<.exe<CR>i
 if exists('g:AutoPairsLoaded') || &cp
   finish
 end
