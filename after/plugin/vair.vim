@@ -669,6 +669,9 @@ endf
 " Always silent the command
 inoremap <silent> <SID>AutoPairsReturn <C-R>=AutoPairsReturn()<CR>
 imap <script> <Plug>AutoPairsReturn <SID>AutoPairsReturn
-
+" Commenting blocks of code.
+autocmd FileType * let b:comment_leader = (split(&commentstring, '%s')+['//'])[0] . ' '
+noremap <silent> ,cc :<C-B>silent <C-E>s/^\s*\zs/\=escape(b:comment_leader,'\')<CR>:nohlsearch<CR>
+noremap <silent> ,cu :<C-B>silent <C-E>s/^\s*\zs<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 
 au BufEnter * :call AutoPairsTryInit()
