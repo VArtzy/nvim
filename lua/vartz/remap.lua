@@ -7,7 +7,7 @@ vim.keymap.set("n", "<leader>s", "<C-d>zz")
 vim.keymap.set('t', 'jk', 'exit<CR><CR>')
 vim.keymap.set('t', '<C-w>', '<C-\\><C-n>:wincmd w<CR>')
 vim.keymap.set('n', '<C-w>', '<C-w>wi')
-vim.keymap.set('n', 't', [[:let current_dir = getcwd() | cd %:p:h | bot split term://cmd | resize 10 | cd <bar> execute 'cd' fnameescape(current_dir)<CR>i]])
+vim.keymap.set('n', '<S-t>', [[:let current_dir = getcwd() | cd %:p:h | bot split term://cmd | resize 10 | cd <bar> execute 'cd' fnameescape(current_dir)<CR>i]])
 
 vim.keymap.set("n", "<leader>pv", "<cmd>e ~/AppData/Local/nvim/<CR>")
 
