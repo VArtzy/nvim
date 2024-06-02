@@ -4,8 +4,8 @@ vim.keymap.set('n', '<C-s>', ':w<CR>')
 vim.keymap.set("n", "<C-d>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>s", "<C-d>zz")
 
-vim.keymap.set('t', 'jk', 'exit<CR><CR>')
-vim.keymap.set('t', '<C-w>', '<C-\\><C-n>:wincmd w<CR>')
+vim.keymap.set('t', '<C-w>', 'exit<CR><CR>')
+vim.keymap.set('t', 'jk', '<C-\\><C-n>:wincmd w<CR>')
 vim.keymap.set('n', '<C-w>', '<C-w>wi')
 vim.keymap.set('n', '<S-t>', [[:let current_dir = getcwd() | cd %:p:h | bot split term://cmd | resize 10 | cd <bar> execute 'cd' fnameescape(current_dir)<CR>i]])
 

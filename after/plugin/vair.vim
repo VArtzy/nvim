@@ -49,7 +49,7 @@ if !exists('g:AutoPairsMapCh')
 end
 
 if !exists('g:AutoPairsMapCR')
-  let g:AutoPairsMapCR = 1
+  let g:AutoPairsMapCR = 0
 end
 
 if !exists('g:AutoPairsWildClosedPair')
