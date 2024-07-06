@@ -1,12 +1,11 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<C-n>", vim.cmd.Ex)
 vim.keymap.set('n', '<C-s>', ':w<CR>')
-vim.keymap.set("n", "<C-d>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>s", "<C-d>zz")
+vim.keymap.set("n", "<C-d>", ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>')
 
 vim.keymap.set('t', 'jk', '<C-\\><C-n>:wincmd w<CR>')
 vim.keymap.set('n', '<C-w>', '<C-w>wi')
-vim.keymap.set('n', '<S-t>', [[:let current_dir = getcwd() | cd %:p:h | bot split term://cmd | resize 10 | cd <bar> execute 'cd' fnameescape(current_dir)<CR>i]])
+vim.keymap.set('n', '<S-t>', ':bot sp | resize 10 | term<CR>i')
 
 vim.keymap.set("n", "<leader>pv", "<cmd>e ~/AppData/Local/nvim/<CR>")
 

@@ -7,7 +7,6 @@
 " Repository: https://github.com/jiangmiao/auto-pairs
 " License: MIT
 
-noremap <leader>gcc :bot split term://cmd /c g++ % -o %< && %<.exe<CR>i
 if exists('g:AutoPairsLoaded') || &cp
   finish
 end
@@ -49,7 +48,7 @@ if !exists('g:AutoPairsMapCh')
 end
 
 if !exists('g:AutoPairsMapCR')
-  let g:AutoPairsMapCR = 0
+  let g:AutoPairsMapCR = 1
 end
 
 if !exists('g:AutoPairsWildClosedPair')
