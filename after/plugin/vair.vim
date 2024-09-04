@@ -672,5 +672,6 @@ imap <script> <Plug>AutoPairsReturn <SID>AutoPairsReturn
 autocmd FileType * let b:comment_leader = (split(&commentstring, '%s')+['//'])[0] . ' '
 noremap <silent> ,cc :<C-B>silent <C-E>s/^\s*\zs/\=escape(b:comment_leader,'\')<CR>:nohlsearch<CR>
 noremap <silent> ,cu :<C-B>silent <C-E>s/^\s*\zs<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+command! UML silent! execute '!java -jar E:\tools\plantuml\plantuml.jar %' | execute '!start %:r.png'
 
 au BufEnter * :call AutoPairsTryInit()
