@@ -668,9 +668,6 @@ endf
 " Always silent the command
 inoremap <silent> <SID>AutoPairsReturn <C-R>=AutoPairsReturn()<CR>
 imap <script> <Plug>AutoPairsReturn <SID>AutoPairsReturn
-" Commenting blocks of code.
-autocmd FileType * let b:comment_leader = (split(&commentstring, '%s')+['//'])[0] . ' '
-noremap <silent> ,cc :<C-U>if getline('.') =~ '^\s*' . escape(b:comment_leader, '/')<Bar>execute 'silent! s/^\s*' . escape(b:comment_leader, '/') . '//'<Bar>else<Bar>execute 'silent! s/^\s*/' . escape(b:comment_leader, '/') . '/'<Bar>endif<CR>:nohlsearch<CR>
 command! UML silent! execute '!java -jar E:\tools\plantuml\plantuml.jar %' | execute '!start %:r.png'
 
 au BufEnter * :call AutoPairsTryInit()
