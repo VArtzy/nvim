@@ -4,4 +4,4 @@ Minimal, fast and full-blown neovim text editor config that you'll ever need. [s
 
 [Run ~800ms on 4GB/AMD A6-9225](https://github.com/user-attachments/assets/8160e722-75a7-4fde-b3ab-f73c8c0e87ca) (sequence run) -- Run 13s (first run)
 
-Warn: may not smooth on OS other than Windows, I am tunning into.
+Warn: may not smooth on OS other than Windows, I am tunning into
