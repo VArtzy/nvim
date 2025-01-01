@@ -11,7 +11,6 @@ return require('packer').startup(function(use)
 	use 'craftzdog/solarized-osaka.nvim'
 
 	use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-	use 'nvim-treesitter/playground'
 	use 'theprimeagen/harpoon'
     use {'vartzy/neocurl', ft = 'http'}
 	use 'mbbill/undotree'
