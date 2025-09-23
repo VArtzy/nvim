@@ -6,4 +6,4 @@ Minimal, fast and full-blown neovim text editor config that you'll ever need. [s
 
 
 
-Tested run smooth on Windows (AppData/Local/nvim), Linux and macOS (.config/nvim) but may need changes for enviroment specific
+Tested run smooth on Linux and macOS (.config/nvim), Windows (AppData/Local/nvim) but may need changes for enviroment specific
