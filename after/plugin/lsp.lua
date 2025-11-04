@@ -42,7 +42,15 @@ cmp.setup({
   formatting = lsp_zero.cmp_format(),
   mapping = cmp.mapping.preset.insert({
     ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<Tab>'] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+            cmp.select_next_item(cmp_select)
+        elseif vim.snippet.active({ direction = 1 }) then
+            vim.snippet.jump(1)
+        else
+            fallback()
+        end
+    end, { 'i', 's' }),
     ['<Enter>'] = cmp.mapping.confirm({ select = true }),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<Esc>'] = cmp.mapping.close(),
