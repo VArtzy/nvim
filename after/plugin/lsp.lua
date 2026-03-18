@@ -14,7 +14,7 @@ lsp_zero.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
   vim.keymap.set("n", ",r", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", ",rn", function() vim.lsp.buf.rename() end, opts)
-  vim.keymap.set("n", ",h", function() vim.lsp.buf.signature_help() end, opts)
+  vim.keymap.set("i", "<C-s>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
 require('mason').setup({})
