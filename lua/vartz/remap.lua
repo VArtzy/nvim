@@ -17,6 +17,7 @@ vim.keymap.set({"i", "v"}, "jk", "<Esc>")
 
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 vim.keymap.set("n", ",d", vim.diagnostic.setqflist)
+vim.keymap.set("n", ",ld", vim.diagnostic.setloclist)
 
 local function tui_popup(cmd)
   local buf = vim.api.nvim_create_buf(false, true)
@@ -32,5 +33,5 @@ local function tui_popup(cmd)
   vim.cmd("startinsert")
 end
 vim.keymap.set("n", ",g", function() tui_popup("lazygit") end)
-vim.keymap.set("n", ",c", function() tui_popup("copilot --continue") end)
+vim.keymap.set("n", ",c", function() tui_popup("codex resume --last") end)
 vim.keymap.set("n", ",gd", function() tui_popup("git diff") end)
